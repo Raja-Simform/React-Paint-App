@@ -16,11 +16,11 @@ const generateRandomColor = (count: number) => {
   }
   return colors;
 };
-const colorArray = generateRandomColor(10);
+const colorArray = generateRandomColor(600);
 
 function App() {
   const rows = 20;
-  const cols = 56;
+  const cols = 55;
 
   function generatingGrid() {
     const newGrid = [];
@@ -93,6 +93,7 @@ function App() {
         rows={rows}
         cols={cols}
       />
+      <div className="flexbox">
       <Color
         colorArray={colorArray}
         handleColorSelect={handleColorSelect}
@@ -105,6 +106,7 @@ function App() {
         <button className="clear" onClick={() => handleclear()}>
           Clear
         </button>
+      </div>
       </div>
     </>
   );

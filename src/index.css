@@ -1,11 +1,12 @@
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #121212;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,117 +16,213 @@
 
 #heading {
   text-align: center;
-  margin: 10px 0;
+  margin: 20px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .gridContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  padding: 10px;
+  background-color: #1e1e1e;
 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  max-width: 90vw;
+  margin: 0 auto;
 }
 
 .row {
   display: flex;
+ 
 }
 
 .cell {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  background-color: #2a2a2a;
+  /* border-radius: 6px; */
+  /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.8); */
+  cursor: pointer;
  
+}
+
+.cell:hover {
+  /* box-shadow: 0 0 8px 2px rgb(242, 7, 81); */
+  background-color: #3d3d3d;
 }
 
 .currentColor {
   height: 50px;
   width: 50px;
-  border: 2px solid black;
-  margin-left: 5px;
+  border-radius: 8px;
+  border: 2px solid #040102;
+  margin-left: 10px;
+  box-shadow: 0 0 8px #090003;
 }
 
 .color-picker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
-  gap: 10px;
+  margin-top: 20px;
+  gap: 15px;
+  background-color: #1a1a1a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(242, 7, 81, 0.3);
+  max-width: 400px;
+  width: 100%;
 }
 
 .button-select {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .color-grid {
   display: flex;
   flex-wrap: wrap;
-  max-height: 150px;
+  max-height: 160px;
   overflow-y: auto;
-  gap: 10px;
-  padding: 5px;
-  border: 1px solid #444;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #333;
   background-color: #111;
+  border-radius: 10px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.7);
 }
-
+.color-grid::-webkit-scrollbar {
+  display: none;
+}
+.color-grid{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .color-box {
-  width: 35px;
-  height: 35px;
-  margin: 0 5px;
+  width: 38px;
+  height: 38px;
+  margin: 0 6px;
   cursor: pointer;
-  transition: outline 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .color-box:hover {
-  outline: 1px solid rgb(242, 7, 81);
+  outline: none;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 3px rgb(10, 8, 9);
 }
 
 .toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
-  gap: 5px;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+.draw,
+.clear {
+  height: 50px;
+  width: 110px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border: none;
 }
 
 .draw {
-  height: 50px;
-  width: 100px;
-  background-color: rgb(255, 255, 255);
-  color: black;
-  border: 1px solid rgb(255, 255, 255);
-  cursor: pointer;
-  transition: border 0.3s ease;
+  background-color: #7c0876;
+  color: white;
+}
+
+.draw:hover {
+  background-color: #d005c3;
+  box-shadow: 0 0 12px #000000;
 }
 
 .clear {
-  height: 50px;
-  width: 100px;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  border: 1px solid rgb(255, 255, 255);
-  cursor: pointer;
-  transition: border 0.3s ease;
+  background-color: #333;
+  color: #eee;
 }
 
-.draw:hover,
 .clear:hover {
-  border: 1px solid black;
+  background-color: #555;
+  box-shadow: 0 0 12px #040001;
 }
 
 .active {
-  background-color: white;
-  color: rgb(0, 0, 0);
+  background-color: #020001 !important;
+  color: white !important;
+  box-shadow: 0 0 15px #290404 !important;
 }
 
 button {
   height: 40px;
-  border: 3px solid blue;
+  border-radius: 8px;
+  border: 2px solid #120207;
+  background-color: transparent;
+  color: #f20751;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+  padding: 0 15px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #9b046b;
+  color: #0e0e0e;
+  box-shadow: 0 0 10px #000000;
 }
 
 .current-colors {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 15px;
+  margin-bottom: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+
+.flexbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+@media (max-width: 480px) {
+  .cell {
+    width: 24px;
+    height: 24px;
+  }
+
+  .color-box {
+    width: 28px;
+    height: 28px;
+    margin: 0 4px;
+  }
+
+  .draw,
+  .clear {
+    width: 90px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  #heading {
+    font-size: 1.5rem;
+  }
+}
+
 
