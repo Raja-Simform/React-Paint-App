@@ -32,7 +32,7 @@ export default function Grid({draw,gridCell,handleGridRightClick,handleGridLeftC
                 key={j}
                 className={"cell"}
                 style={{background:gridCell[i][j]}}
-                onClick={()=>handleGridLeftClick(i,j)}
+                onClick={()=>handleGridLeftClick(i,j)}//*
                 onContextMenu={(e)=>{
                   e.preventDefault();
                   handleGridRightClick(i,j);
